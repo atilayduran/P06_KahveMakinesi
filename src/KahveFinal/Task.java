@@ -1,7 +1,12 @@
+package KahveFinal;
+
 public class Task {
+    //    public void cikis() {
+    //            System.out.println(sut.getSut() + " " + kahve.getKahveTuru() + " hazirdir" + "\nBizi tercih ettiginiz icin tesekkur ederiz");
+    ////baska siparsis icin basa dondurulebilir...
     //1. Basit bir Kahve makinesi oluşturun.    3 çeşit kahvemiz olsun.
     //  2. Sistem şu soruyu sorsun: "Hangi Kahveyi istersiniz?"
-    //  3.Bu soru ile birlikte kullanıcı kahve bilgilerini görsün.
+    //  3.Bu soru ile birlikte kullanıcı kahve bilgilerini görsün.   GETTER SETTER KU -TRY CATCH KULLANALIM!!!!
     //   Örn:
     //  Hangi Kahveyi İstersiniz?
     //  1.Türk kahvesi
@@ -10,7 +15,7 @@ public class Task {
     //        String hangiKahve oluşturun ve var olan kahvelerden birini yazınız.
     //         (örn: Türk Kahvesi,  ya da türk kahvesi.  --->  Büyük- küçük harf duyarlı olmaması için String methodu kullanın.)
     //                                                                                     todo 1. Koşul bölümü
-    //        Eğer kahve Türk kahvesi ise, konsola = Türk kahvesi hazırlanıyor. yazsın.(Dümdüz Türk kahvesi yazmayın. String hangiKahve'yi çağırın!!)
+    //        xxxxxxEğer kahve Türk kahvesi ise, konsola = Türk kahvesi hazırlanıyor. yazsın.(Dümdüz Türk kahvesi yazmayın. String hangiKahve'yi çağırın!!)
     //        Eğer filtre kahve ise,   konsola = Filtre kahve hazırlanıyor.  yazsın.     (String hangiKahve'yi kullanın !)
     //        Eğer Espresso ise, konsola =  Espresso hazırlanıyor...   yazsın.  (String hangiKahve'yi kullanın !)
     //        Eğer yanlış harf girerseniz, konsola = Hatalı tuşlama yaptınız. yazsın. (Hatalı tuslamadan sonra kod calısmaya devam edecektir, o konuyu daha görmediniz bu yüzden bastan baslatın.)
@@ -19,7 +24,7 @@ public class Task {
     //       String sut olusturun.
     //                                                                           todo 2.Koşul Bölümü
     //       eğer String sut,  evet   e eşitse,konsola, Süt ekleniyor... yazısı gelsin.         -- (Büyük küçük harf duyarlı olmaması için String methodu kullanın. Olması gereken ihtimaller: Evet, EVET, EvEt,EVEt vs.
-    //      eğer String sut, hayır a eşit ise, konsola , Süt eklenmiyor  yazısı gelsin.
+    //      eğer String sut, hayır a eşit ise, konsola , Süt eklenmiyor  yazısı gelsin
     //                                                                                    todo ----------------------------------
     //        Sistem bize "Şeker ister misiniz ? (Evet veya hayır cevabını veriniz) : " şeklinde bir soru sorsun. (Büyük küçük harf duyarlılıgı olmaması için string method kullanın.
     //        String seker oluşturunuz.
