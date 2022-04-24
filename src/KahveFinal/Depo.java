@@ -1,20 +1,14 @@
 package KahveFinal;
 
-public class depo {
+public class Depo {
 
     private String KahveTuru;
     private String seker;
     private String bardak;
     private String sut;
 
-    public depo(String kahveTuru, String seker, String bardak, String sut) {
-        KahveTuru = kahveTuru;
-        this.seker = seker;
-        this.bardak = bardak;
-        this.sut = sut;
-    }
 
-    public depo(String kahveTuru) {
+    public Depo(String kahveTuru) {
         KahveTuru = kahveTuru;
     }
 
@@ -50,7 +44,7 @@ public class depo {
         this.sut = sut;
     }
 
-    public depo() {
+    public Depo() {
     }
 
     @Override

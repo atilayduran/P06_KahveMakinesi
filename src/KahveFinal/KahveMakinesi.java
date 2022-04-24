@@ -1,21 +1,19 @@
 package KahveFinal;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class KahveMakinesi {
-    static Scanner scan = new Scanner(System.in);
-    static String hangiKahve;
-    static String sutEkleme;
-    static String sekerAdedi;
+    Scanner scan = new Scanner(System.in);
+    String hangiKahve;
+    String sutEkleme;
+    String sekerAdedi;
 
 
-    static List<depo> list = new ArrayList<>();
+    Depo kahve = new Depo();
+    Depo sut = new Depo();
+    Depo seker = new Depo();
 
-    depo kahve = new depo(hangiKahve);
-    depo sut = new depo(sutEkleme);
-    depo seker = new depo(sekerAdedi);
+
 
     public void kahveCesidi() throws InterruptedException {
 
@@ -24,21 +22,43 @@ public class KahveMakinesi {
         System.out.println("************************");
         System.out.println("Hangi Kahveyi istersiniz? Lutfen tuslayiniz- \n1.Turk Kahvesi\n" + "2.Filtre Kahve\n" + "3.Espresso\n");
 
-        String hangiKahve = scan.nextLine();
+        hangiKahve = scan.nextLine();
         switch (hangiKahve) {
             case "1":
                 hangiKahve = "Turk Kahvesi";
-                System.out.println("Turk Kahvesi hazırlanıyor...");
+                System.out.print("Turk Kahvesi hazırlanıyor");
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(".");
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                    }
+                }
                 break;
 
             case "2":
                 hangiKahve = "Filtre Kahve";
-                System.out.println("Filtre Kahve hazırlanıyor...");
+
+                System.out.print("Filtre Kahve hazırlanıyor");
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(".");
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                    }
+                }
                 break;
 
             case "3":
                 hangiKahve = "Espresso";
-                System.out.println("Espresso hazırlanıyor...");
+                System.out.print("Espresso hazırlanıyor");
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(".");
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                    }
+                }
                 break;
 
             default:
@@ -58,25 +78,32 @@ public class KahveMakinesi {
     }
 
     public void sutEkle() throws InterruptedException {
-
-        System.out.println("************************");
+        System.out.println();
+        System.out.println("****** SUT SECIMI ******");
         System.out.println("Sut eklememizi ister misiniz? \nEvet veya Hayir olarak cevaplayiniz");
-        String sutEkleme = scan.next();
+        sutEkleme = scan.next();
 
 
         if (sutEkleme.equalsIgnoreCase("Evet")) {
-            System.out.println("Sut ekleniyor");
+            System.out.print("Sut ekleniyor");
+            for (int i = 0; i < 3; i++) {
+                System.out.print(".");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                }
+            }
             sut.setSut("Sutlu");
         } else if (sutEkleme.equalsIgnoreCase("Hayir")) {
             System.out.println("Sut eklenmiyor");
             sut.setSut("Sutsuz");
-        }else{
+        } else {
             System.out.println("Hatali giris yaptiniz. Lutfen tekrar deneyiniz.");
             sutEkle();
         }
-      //  list.add(sut);  silip deneme yapicaz
 
-        System.out.println("************************");
+
+        System.out.println();
         sekerSecimi();
     }
 
@@ -87,13 +114,28 @@ public class KahveMakinesi {
         if (cevap.equalsIgnoreCase("evet")) {
             System.out.println("Kac seker istersiniz?");
             sekerAdedi = scan.next();
-            System.out.println(sekerAdedi + " adet sekerli kahveniz hazirlaniyor...");
-            Thread.sleep(3000);
+
+            System.out.print(sekerAdedi + " adet sekerli kahveniz hazirlaniyor");
+            for (int i = 0; i < 3; i++) {
+                System.out.print(".");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                }
+            }
+
             seker.setSeker(sekerAdedi + " sekerli");
         } else if (cevap.equalsIgnoreCase("hayir")) {
-            System.out.println("Sekersiz kahveniz hazirlaniyor...");
-            Thread.sleep(3000);
+            System.out.print("Sekersiz kahveniz hazirlaniyor");
+            for (int i = 0; i < 3; i++) {
+                System.out.print(".");
+                try {
+                    Thread.sleep(750);
+                } catch (InterruptedException e) {
+                }
+            }
             seker.setSeker("Sekersiz");
+
         } else {
             System.out.println("Lutfen gecerli bir cevap veriniz");
             sekerSecimi();
@@ -102,21 +144,21 @@ public class KahveMakinesi {
         for (int i = 0; i < 3; i++) {
             System.out.print(".");
             try {
-                Thread.sleep(1500);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
             }
         }
-        // list.add(seker);
+
         bardakSecimi();
 
     }
 
     private void bardakSecimi() throws InterruptedException {
         System.out.println();
-        System.out.println("************************");
-        System.out.println("buyuk boy bardak icin 1");
-        System.out.println("kucuk boy bardak icin 2");
-        System.out.println("orta boy bardak icin 3 tuslayiniz.");
+        System.out.println("****** BARDAK SECIMI ******");
+        System.out.println("Buyuk boy bardak icin 1");
+        System.out.println("Kucuk boy bardak icin 2");
+        System.out.println("Orta boy bardak icin 3 tuslayiniz.");
         int bardak = 0;
         while (true) {
             try {
@@ -134,15 +176,15 @@ public class KahveMakinesi {
         switch (bardak) {
             case 1:
                 System.out.println("Kahveniz buyuk boy bardakta hazirlaniyor...");
-                Thread.sleep(3000);
+
                 break;
             case 2:
                 System.out.println("Kahveniz kucuk boy bardakta hazirlaniyor...");
-                Thread.sleep(3000);
+
                 break;
             case 3:
                 System.out.println("Kahveniz orta boy bardakta hazirlaniyor...");
-                Thread.sleep(3000);
+
                 break;
             default:
                 System.out.println("Lutfen gecerli bir sayi giriniz");
@@ -154,8 +196,16 @@ public class KahveMakinesi {
     }
 
     private void cikis() {
-        System.out.println("************************");
-        System.out.println(seker.getSeker() + " " + sut.getSut() + " " + kahve.getKahveTuru() + " hazirdir" + "\nBizi tercih ettiginiz icin tesekkur ederiz");
+        System.out.println("****** KAHVENIZ HAZIR OLMAK UZERE ******");
+        for (int i = 0; i < 3; i++) {
+            System.out.print(".");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+        }
+        System.out.println();
+        System.out.println(seker.getSeker() + " " + sut.getSut() + " " + kahve.getKahveTuru() + " hazirdir" + "\nBizi tercih ettiginiz icin tesekkur ederiz :-)"+"\n<3<3<3");
         ////baska siparsis icin basa dondurulebilir...
 
     }
